@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List - Flipkart</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .dark-mode {
+            background-color: #333;
+            color: #f9f9f9;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+        }
+        .menu-icon {
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .header-title {
+            flex-grow: 1;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .theme-switch {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            color: white;
+            padding: 5px 10px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 10px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            justify-content: center;
+        }
+        .product-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .product-image {
+            width: 100%;
+            max-width: 200px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        .product-name {
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+        }
+        .product-desc {
+            font-size: 14px;
+            color: #757575;
+            margin-top: 4px;
+            display: none;
+            text-align: center;
+        }
+        .product-price {
+            font-size: 16px;
+            color: #388e3c;
+            font-weight: bold;
+            margin-top: 8px;
+        }
+        .add-to-cart {
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 10px;
+        }
+        .buy-now {
+            background-color: #ffcc00;
+            color: #000;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+    </style>
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+        }
+        function toggleDescription(event) {
+            let desc = event.nextElementSibling;
+            desc.style.display = desc.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <div class="menu-icon">☰</div>
+        <div class="header-title">Welcome to Flipkart</div>
+        <button class="theme-switch" onclick="toggleTheme()">Switch Theme</button>
+    </div>
+    <div class="container">
+        <div class="product-card">
+            <img src="https://tse4.mm.bing.net/th?id=OIP.d2gzqHmbB6mwgmfcu7d26QHaEf&pid=Api&P=0&h=180" class="product-image" alt="Asus Vivobook 14 Laptop">
+            <div class="product-name" onclick="toggleDescription(this)">Asus Vivobook 14 Laptop</div>
+            <div class="product-desc">Powerful laptop with Intel i5 and SSD storage.</div>
+            <div class="product-price">₹50,000</div>
+            <button class="add-to-cart">🛒 Add to Cart</button>
+            <button class="buy-now">Buy Now</button>
+        </div>
+        <div class="product-card">
+            <img src="https://fdn2.gsmarena.com/vv/pics/apple/apple-watch-series9-1.jpg" class="product-image" alt="Apple Watch Series 9">
+            <div class="product-name" onclick="toggleDescription(this)">Apple Watch Series 9</div>
+            <div class="product-desc">Smartwatch with health tracking and GPS.</div>
+            <div class="product-price">₹40,000</div>
+            <button class="add-to-cart">🛒 Add to Cart</button>
+            <button class="buy-now">Buy Now</button>
+        </div>
+        <div class="product-card">
+            <img src="https://in-media.apjonlinecdn.com/catalog/product/cache/b3b166914d87ce343d4dc5ec5117b502/c/0/c08192495_33.png" class="product-image" alt="Victus Gaming Laptop">
+            <div class="product-name" onclick="toggleDescription(this)">Victus Gaming Laptop</div>
+            <div class="product-desc">High-performance gaming laptop with RTX graphics.</div>
+            <div class="product-price">₹80,000</div>
+            <button class="add-to-cart">🛒 Add to Cart</button>
+            <button class="buy-now">Buy Now</button>
+        </div>
+        <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/61bJZx1v8GL._AC_UY327_FMwebp_QL65_.jpg" class="product-image" alt="Apple Watch Series 9 (4th Image)">
+            <div class="product-name" onclick="toggleDescription(this)">Apple Watch Series 9</div>
+            <div class="product-desc">Latest smartwatch with advanced health tracking.</div>
+            <div class="product-price">₹42,000</div>
+            <button class="add-to-cart">🛒 Add to Cart</button>
+            <button class="buy-now">Buy Now</button>
+        </div>
+    </div>
+</body>
+</html>
