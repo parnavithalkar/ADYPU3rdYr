@@ -130,6 +130,8 @@
             <div class="product-price">₹{{ p_i.price }}</div>
             <button class="add-to-cart">🛒 Add to Cart</button>
             <button class="buy-now">Buy Now</button>
+            <a href="{% url 'edit_product' p_i.id %}" class="btn btn-primary">Edit</a>
+            <a href="{% url 'delete_product' p_i.id %}" class="btn btn-danger">Delete</a>
         </div>
         {% endfor %}
     </div>
